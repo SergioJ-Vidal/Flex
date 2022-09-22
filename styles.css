@@ -1,0 +1,118 @@
+
+/*Para móvil 375x667 px*/
+
+/*Este es un div que sería el contenedor principal, le he puesto las medidas de alto y ancho wrap para organizazr las cajas
+y he alineado los textos.*/
+
+div.todo {
+    display: flex;
+    width: 375px;
+    height: 667px;
+    text-align: center;
+    flex-wrap: wrap;
+    background-color: black;
+}
+
+/* Aquí he dado color blanco a la letra, flex direction (al contenido de dentro de cada caja, no a ellas), color al fondo y un justify
+para tener centrados los elementos dentro de ellas.*/
+
+header {
+    display: flex;
+    background-color: rgb(38, 109, 150);
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+}
+
+hero {
+    display: flex;
+    background-color: red;
+    flex-direction: column;
+    color: white;
+    justify-content: center;
+}
+
+content {
+    display: flex;
+    background-color: green;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+}
+
+sidebar {
+    display: flex;
+    background-color: blueviolet;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+}
+
+footer {
+    display: flex;
+    background-color: grey;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+}
+
+/*Para tablet 820x1180, he ajustado el ancho y el alto para que corresponda con la tablet y aumentado el tamaño de letra. 
+A parte he creado un div class para agrupar las cajas de sidebar y content y les he cambiado el flex direction para que esten paralelas
+en lugar de una debajo de otra.*/
+
+@media screen and (min-width: 820px) {
+    
+    div.todo {
+        width: 820px;
+        display: flex;
+        height: 1180px;
+        font-size: 19px;
+        
+
+    }
+
+    div.nucleo {
+        display: flex;
+        flex-direction: row;
+    }
+
+    
+
+}
+
+/*Ordenador 1920x1080. Al igual que con la tablet he ajustado el ancho y el alto y la fuente. Luego al div que agrupa content y sidebar
+le he puesto menos ancho para poder centrarlo en el centro. También he tenido que aumentar el tamaño de las cajas.*/
+
+@media screen and (min-width: 1920px) {
+
+    div.todo {
+        width: 1920px;
+        display: flex;
+        height: 1080px;
+        font-size: 19px;
+    }
+
+    div.nucleo {
+        display: flex;
+        width: 1700px;
+        margin-left: 110px;    /*He probado con justify y align pero ninguno me lo centraba, al final le he puesto de margen izquierdo
+                               110px que es la mitad de la diferencia entre 1920 y 1700 que es el ancho, algo habré hecho mal porque
+                               debería haber podido centrar de otra forma el div pero no lo he conseguido.*/
+
+    }
+
+    header {
+        width: 1920px;
+    }
+
+    hero {
+        width: 1920px;
+    }
+
+    footer {
+        width: 1920px;
+    }
+}
+
+/*Visualmente no ha quedado mal pero tengo la impresión que el código es una chapuza y en la práctica tendría bugs visuales por todos 
+lados*/
